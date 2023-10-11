@@ -39,7 +39,7 @@ useEffect(() => {
                     <div key={userRecipe.id}>
                     <Link to={`/random-recipe-details-page/${userRecipe.id}`}>
                     <h3>{userRecipe.recipeName}</h3>
-                    <img src={userRecipe.image} style={{height: '500px', width: '500px'}} />
+                    <img className='randomRecipes' src={userRecipe.image} style={{height: '500px', width: '500px', borderRadius:'100px 0 100px 0'}} />
                     </Link>
                     </div>
                     )

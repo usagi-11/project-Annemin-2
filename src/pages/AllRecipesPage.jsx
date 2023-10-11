@@ -29,7 +29,7 @@ return (
     <li key={oneRecipe.id}>
       <Link to={`/recipe-page/${oneRecipe.id}`}>
       <h3>{oneRecipe.recipeName}</h3>
-      <img className='myRecipeImg' src={oneRecipe.image} style={{height: '400px', width: '400px'}}/>
+      <img className='myRecipeImg' src={oneRecipe.image} style={{height: '400px', width: '400px', borderRadius:'100px'}}/>
       </Link>
       </li>
     )

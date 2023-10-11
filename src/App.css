@@ -36,6 +36,11 @@ nav {
 .myRecipeImg {
   height: 100px;
   width: 100px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.randomRecipes {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .bodyDiv {
@@ -48,12 +53,17 @@ nav {
 }
 
 .userName {
-  padding-left: 20px;
-
+  margin: 20px;
+  padding: 0 20px 0 20px;
+  font-weight: bold;
+  border: 5px solid rgb(15, 15, 110);
+  border-radius: 10px;
 }
 
 .userImg {
   border-radius: 40px;
+  position: relative;
+  box-shadow: 1px 1px 2px black, 0 0 25px rgb(15, 15, 110), 0 0 5px rgb(0, 0, 74);;
 }
 
 .centerAll {
