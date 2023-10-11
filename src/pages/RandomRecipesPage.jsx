@@ -30,14 +30,16 @@ useEffect(() => {
       {users.map((oneUser)=>{
         return(
             <div key={oneUser.id}>
-                <img src={oneUser.image}/>
-                <p>{oneUser.name}</p>
+              <div className='user'>
+                <img className='userImg' src={oneUser.image}/>
+                <p className='userName'>{oneUser.name}</p>
+              </div>
                 {oneUser.recipesRandom.map((userRecipe)=>{
                     return (
                     <div key={userRecipe.id}>
-                    <Link to={`/recipe-page/${userRecipe.id}`}>
+                    <Link to={`/random-recipe-details-page/${userRecipe.id}`}>
                     <h3>{userRecipe.recipeName}</h3>
-                    <img src={userRecipe.image} />
+                    <img src={userRecipe.image} style={{height: '500px', width: '500px'}} />
                     </Link>
                     </div>
                     )
