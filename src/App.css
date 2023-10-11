@@ -1,0 +1,37 @@
+#root {
+  //background-color: rgb(199, 224, 232);
+}
+
+
+nav {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  background: rgb(88, 103, 143);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+.navLinks {
+  color: aliceblue;
+  text-decoration: none;
+  padding: 20px;
+}
+
+.navText {
+  border: 10px solid rgb(47, 47, 84);
+  border-radius: 10px;
+  margin: 5px;
+  background: rgb(47, 47, 84);
+}
+
+.navBarSpace {
+  height: 50px;
+}
+
+.myRecipeImg {
+  height: 100px;
+  width: 100px;
+}
