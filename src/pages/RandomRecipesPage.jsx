@@ -9,7 +9,7 @@ function RandomRecipesPage() {
 
  async function getUsers() {
     try {
-      const response = await fetch('http://localhost:5000/users?_embed=recipesRandom')
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/users?_embed=recipesRandom`)
       if (response.ok) {
         const allUsers = await response.json()
         console.log(allUsers);

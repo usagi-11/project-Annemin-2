@@ -28,7 +28,7 @@ function RecipePage() {
 
       const handleDelete = async () => {
         try {
-          const response = await fetch(`http://localhost:5000/recipes/${RecipeId}`, {
+          const response = await fetch(`${import.meta.env.VITE_API_URL}/recipes/${RecipeId}`, {
             method: 'DELETE',
           })
           if (response.ok) {

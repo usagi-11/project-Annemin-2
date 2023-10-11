@@ -9,7 +9,7 @@ console.log(RecipeId);
 
     const fetchRecipe = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/recipes/${RecipeId}`)
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/recipes/${RecipeId}`)
             if (response.ok) {
               const recipe = await response.json()
               setRecipe(recipe)

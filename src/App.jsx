@@ -4,7 +4,6 @@ import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import AddPage from './pages/AddPage'
 import AllRecipesPage from './pages/AllRecipesPage'
-/* import ProfilePage from './pages/ProfilePage' */
 import RecipePage from './pages/RecipePage'
 import UpdatePage from './pages/UpdatePage'
 import Navbar from './components/Navbar'

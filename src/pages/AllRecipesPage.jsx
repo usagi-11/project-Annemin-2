@@ -7,7 +7,7 @@ function AllRecipesPage() {
 
   async function getRecipes() {
     try {
-      const response = await fetch('http://localhost:5000/recipes')
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/recipes`)
       if (response.ok) {
         const allRecipes = await response.json()
         setRecipes(allRecipes)

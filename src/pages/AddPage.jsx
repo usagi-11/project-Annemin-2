@@ -18,7 +18,7 @@ const AddPage = ({ isUpdate, recipe }) => {
         const payload = {recipeName,image,ingredients,directions, slug, id}
 
         try {
-            const response = await fetch(`http://localhost:5000/recipes${isUpdate ? `/${recipe.id}` : ''}`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/recipes${isUpdate ? `/${recipe.id}` : ''}`, {
                 method: isUpdate ? 'PUT' :  'POST',
                 body: JSON.stringify(payload),
               headers: {
