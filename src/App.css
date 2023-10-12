@@ -153,8 +153,9 @@ textarea {
 .randomDiv {
   width: 160%;
   margin: 60px;
-  display: flex;
+  
   justify-content: center;
+  
 
 }
 
@@ -162,9 +163,7 @@ textarea {
   padding: 40px;
 }
 
-.randomDivContainer {
-  display: flex;
-}
+
 
 .userRecipesBorder {
   border: 5px solid #373c70;
@@ -183,3 +182,7 @@ textarea {
   border-radius: 10px 160px 160px 10px;
   box-shadow: 4px 4px 4px #1c1927;
 }
+@media (min-width: 1080px) {.randomDivContainer {
+  display: flex;
+}}
+@media (max-width: 1080px) {}
