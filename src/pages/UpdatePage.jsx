@@ -28,8 +28,9 @@ console.log(RecipeId);
 
     return (
         <>
-        <h1>Update Project</h1>
+        <div className='updateBorder'>
        {recipe && <AddPage isUpdate recipe={recipe} />} 
+       </div>
         </>
     )
     }

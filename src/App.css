@@ -1,6 +1,3 @@
-#root {
-}
-
 body {
   margin: 0;
 }
@@ -11,15 +8,20 @@ nav {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  background: rgb(88, 103, 143);
+  background: linear-gradient(to bottom right, #7788c4, #9dc5ab);
   position: fixed;
   top: 0;
   z-index: 100;
+
 }
 .navLinks {
   color: aliceblue;
   text-decoration: none;
   padding: 0 20px 0 20px;
+}
+
+.navLinks:hover {
+  transform: scale(1.1);
 }
 
 .navText {
@@ -30,7 +32,7 @@ nav {
 }
 
 .navBarSpace {
-  height: 100px;
+  height: 60px;
 }
 
 .myRecipeImg {
@@ -39,34 +41,145 @@ nav {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
+.myRecipeImg:hover {
+  transform: scale(1.1);
+}
+
 .randomRecipes {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
+.randomRecipes:hover {
+  transform: scale(1.1);
+}
+
 .bodyDiv {
+  margin: 60px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .user {
+  height: 90px;
+  width: 250px;
+  margin: 40px 40px 40px 0;
   display: flex;
+  justify-content: center;
+  box-shadow: 4px 2px 4px #1c1927;
+  border-radius: 40px 20px 20px 40px;
+  background: rgb(234, 230, 230);
+}
+
+.userRecipes {
+  display: flex;
+  justify-content: center;
 }
 
 .userName {
   margin: 20px;
   padding: 0 20px 0 20px;
   font-weight: bold;
-  border: 5px solid rgb(15, 15, 110);
-  border-radius: 10px;
 }
 
 .userImg {
   border-radius: 40px;
   position: relative;
-  box-shadow: 1px 1px 2px black, 0 0 25px rgb(15, 15, 110), 0 0 5px rgb(0, 0, 74);;
+  box-shadow: 1px 1px 2px black, 0 0 25px rgb(15, 15, 110),
+    0 0 5px rgb(0, 0, 74);
 }
 
 .centerAll {
-  margin: 0;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 45vw;
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formButton {
+  font-weight: bold;
+  height: 40px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 2px black, 0 0 25px rgb(15, 15, 110),
+    0 0 5px rgb(0, 0, 74);
+}
+
+.formButton2 {
+  font-weight: bold;
+  height: 40px;
+  width: 200px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 2px black, 0 0 25px rgb(15, 15, 110),
+    0 0 5px rgb(0, 0, 74);
+    margin: 20px;
+}
+
+label {
+  padding: 15px;
+  font-weight: bold;
+}
+
+input {
+  margin-left: 2%;
+  width: 200%;
+  max-width: 70%;
+}
+
+textarea {
+  margin-left: 2%;
+  height: 100px;
+  width: 200%;
+  max-width: 70%;
+  resize: none;
+}
+
+.directions {
+  max-width: 70%;
+}
+
+.recipeTitle {
+  text-decoration: none;
+  color: #373c70;
+}
+
+.randomDiv {
+  width: 160%;
+  margin: 60px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.imageSpace {
+  padding: 40px;
+}
+
+.randomDivContainer {
+  display: flex;
+}
+
+.userRecipesBorder {
+  border: 5px solid #373c70;
+  background: rgba(202, 213, 230, 0.5);
+  padding: 1em;
+  margin-bottom: 2em;
+  border-radius: 10px 160px 160px 10px;
+  box-shadow: 4px 4px 4px #1c1927;
+}
+
+.AddBorder, .updateBorder {
+  border: 5px solid #373c70;
+  background: rgba(202, 213, 230, 0.5);
+  padding: 4em;
+  margin-bottom: 2em;
+  border-radius: 10px 160px 160px 10px;
+  box-shadow: 4px 4px 4px #1c1927;
 }

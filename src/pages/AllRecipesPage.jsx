@@ -23,18 +23,16 @@ useEffect(() => {
 
 return (
   <>
-  <ul>
   {recipes.map((oneRecipe)=>{
     return (
-    <li key={oneRecipe.id}>
-      <Link to={`/recipe-page/${oneRecipe.id}`}>
-      <h3>{oneRecipe.recipeName}</h3>
+    <div className='imageSpace' key={oneRecipe.id}>
+      <Link className='recipeTitle' to={`/recipe-page/${oneRecipe.id}`}>
+      <h1>{oneRecipe.recipeName}</h1>
       <img className='myRecipeImg' src={oneRecipe.image} style={{height: '400px', width: '400px', borderRadius:'100px'}}/>
       </Link>
-      </li>
+      </div>
     )
   })}
-  </ul>
   </>
 )
 }

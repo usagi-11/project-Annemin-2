@@ -1,6 +1,5 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 
 function RandomRecipeDetailsPage() {
     const {RecipeId} = useParams()
@@ -23,16 +22,34 @@ function RandomRecipeDetailsPage() {
       getRandomRecipe()
     }, [RecipeId])
 
+    
   return oneRandomRecipe ? (
       <>
       <div className='navBarSpace'>
-    <h3>{oneRandomRecipe.recipeName}</h3>
+      <div className='centerAll'>
+    <h1>{oneRandomRecipe.recipeName}</h1>
     <img src={oneRandomRecipe.image} style={{height: '500px', width: '500px', borderRadius:'100px'}}/>
     <h3>Ingredients:</h3>
-    <p>{oneRandomRecipe.ingredients} <br /></p>
-    <br />
+    <ul>
+      {oneRandomRecipe.ingredients.map((ingredient)=>{
+        return (
+          <div key={oneRandomRecipe.id}>
+          <li>{ingredient}</li>
+          </div>
+        )
+      })}
+    </ul>
     <h3>Directions:</h3>
-    <p>{oneRandomRecipe.directions}</p>
+    <ol className='directions'>
+    {oneRandomRecipe.directions.map((direction)=>{
+        return (
+          <div key={oneRandomRecipe.id}>
+            <li>{direction}</li>
+          </div>
+        )
+      })}
+    </ol>
+      </div>
       </div>
     </>
   ) : (

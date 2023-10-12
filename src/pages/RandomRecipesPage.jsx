@@ -29,21 +29,25 @@ useEffect(() => {
   <ul> 
       {users.map((oneUser)=>{
         return(
-            <div key={oneUser.id}>
+            <div className='userRecipesBorder' key={oneUser.id}>
               <div className='user'>
                 <img className='userImg' src={oneUser.image}/>
                 <p className='userName'>{oneUser.name}</p>
               </div>
+              <div className='randomDivContainer'>
                 {oneUser.recipesRandom.map((userRecipe)=>{
                     return (
-                    <div key={userRecipe.id}>
-                    <Link to={`/random-recipe-details-page/${userRecipe.id}`}>
-                    <h3>{userRecipe.recipeName}</h3>
-                    <img className='randomRecipes' src={userRecipe.image} style={{height: '500px', width: '500px', borderRadius:'100px 0 100px 0'}} />
+                    <div className='randomDiv' key={userRecipe.id}>
+                    <Link className='recipeTitle' to={`/random-recipe-details-page/${userRecipe.id}`}>
+                    <h1 >{userRecipe.recipeName}</h1>
+                    <div >
+                    <img className='randomRecipes' src={userRecipe.image} style={{height: '400px', width: '400px', borderRadius:'100px 0 100px 0'}} />
+                    </div>
                     </Link>
                     </div>
                     )
                 })}
+              </div>
             </div>
         )
     })}  

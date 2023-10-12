@@ -10,12 +10,12 @@ const AddPage = ({ isUpdate, recipe }) => {
     const [image, setImage] = useState(isUpdate ? "image" : "")
     const [ingredients, setIngredients] = useState(isUpdate ? "ingredients" : "")
     const [directions, setDirections] = useState(isUpdate ? "directions" : "")
-    const [slug, setSlug] = useState(isUpdate ? "slug" : "")
-    const [id, setId] = useState("")
 
     const onSubmit = async event => {
         event.preventDefault()
-        const payload = {recipeName,image,ingredients,directions, slug, id}
+        const ingredientsArr = ingredients.split(', ');
+        const directionsArr = directions.split(', ');
+        const payload = {recipeName,image,ingredients:ingredientsArr,directions:directionsArr}
 
         try {
             const response = await fetch(`${import.meta.env.VITE_API_URL}/recipes${isUpdate ? `/${recipe.id}` : ''}`, {
@@ -41,8 +41,8 @@ const AddPage = ({ isUpdate, recipe }) => {
             if (isUpdate && recipe) {
               setRecipeName(recipe.recipeName)
               setImage(recipe.image)
-              setIngredients(recipe.ingredients)
-              setDirections(recipe.directions)
+              setIngredients(recipe.ingredients.join(', '))
+              setDirections(recipe.directions.join(', '))
             }
           }, [recipe]);
 
@@ -50,7 +50,8 @@ const AddPage = ({ isUpdate, recipe }) => {
 
     return (
         <>
-        <form onSubmit={onSubmit}>
+        <div className='AddBorder'>
+        <form className='form' onSubmit={onSubmit}>
         <label >
             Recipe Name
         <input type="text" name="recipeName" value={recipeName} onChange={event => setRecipeName(event.target.value)} required/>
@@ -63,17 +64,18 @@ const AddPage = ({ isUpdate, recipe }) => {
 
         <label>
             Ingredients
-        <input type="text" name="ingredients" value={ingredients} onChange={event => setIngredients(event.target.value)} required/>
+            <textarea type="text" name="ingredients" value={ingredients} onChange={event => setIngredients(event.target.value)} required/>
         </label>
 
         <label >
             Directions
-        <input type="text" name="directions" value={directions} onChange={event => setDirections(event.target.value)} required/>
+            <textarea className='directions' type="text" name="directions" value={directions} onChange={event => setDirections(event.target.value)} required/>
         </label>
 
 
-    <button type="submit">{isUpdate ? 'Update' : 'Add'}</button>
+    <button className='formButton' type="submit">{isUpdate ? 'Update' : 'Add'}</button>
         </form>
+        </div>
         </>
     )
     }
